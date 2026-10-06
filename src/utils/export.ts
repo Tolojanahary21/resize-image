@@ -135,13 +135,13 @@ async function encodeAvif(
     await encode(
       imageData,
       {
-        cqLevel,
+        quality: Math.max(0, Math.min(100, quality)),
         speed: 6,
       },
     );
 
   return new Blob(
-    [buffer],
+    [new Uint8Array(buffer)],
     {
       type: "image/avif",
     },
@@ -299,7 +299,7 @@ async function encodePdf(
     await pdf.save();
 
   return new Blob(
-    [bytes],
+    [new Uint8Array(bytes)],
     {
       type: "application/pdf",
     },
@@ -422,6 +422,10 @@ export async function exportCurrentImage() {
         state.outputFormat,
         state.quality,
       );
+
+    if (!blob) {
+      throw new Error("Impossible d'encoder l'image.");
+    }
 
     const baseName =
       sanitizeFilename(

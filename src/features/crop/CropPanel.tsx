@@ -113,7 +113,7 @@ export default function CropPanel() {
                   }
                   className={`rounded-lg border px-2 py-2 text-xs ${
                     selected
-                      ? "border-black bg-black text-white"
+                      ? "border-black bg-black text-white dark-surface"
                       : "border-zinc-200 hover:bg-zinc-100"
                   }`}
                 >

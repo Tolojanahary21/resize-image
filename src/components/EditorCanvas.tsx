@@ -160,12 +160,14 @@ export default function EditorCanvas() {
       });
     }, []);
 
+  const previousImageId = useRef<string | undefined>(undefined);
+
   useEffect(() => {
-    resetPreview();
-  }, [
-    image?.id,
-    resetPreview,
-  ]);
+    if (previousImageId.current !== image?.id) {
+      previousImageId.current = image?.id;
+      resetPreview();
+    }
+  }, [image?.id, resetPreview]);
 
   const handleFile =
     useCallback(
@@ -369,7 +371,7 @@ export default function EditorCanvas() {
           {...getRootProps()}
           className={`flex min-h-[460px] w-full cursor-pointer items-center justify-center rounded-2xl border-2 border-dashed bg-white p-8 text-center transition ${
             isDragActive
-              ? "border-black bg-zinc-50"
+              ? "border-black bg-zinc-50 dark-surface"
               : "border-zinc-300 hover:border-zinc-500"
           }`}
         >
@@ -394,7 +396,7 @@ export default function EditorCanvas() {
               Traitement entièrement local dans votre navigateur.
             </p>
 
-            <div className="mt-6 flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-medium text-white">
+            <div className="mt-6 flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-medium text-white dark-surface">
               <Upload
                 size={18}
               />
@@ -422,7 +424,7 @@ export default function EditorCanvas() {
 
   return (
     <main className="flex min-h-[520px] min-w-0 flex-col bg-zinc-100 p-4 md:p-6">
-      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark-surface">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-200 px-4 py-3">
           <div className="min-w-0">
             <p className="max-w-[350px] truncate text-sm font-medium">

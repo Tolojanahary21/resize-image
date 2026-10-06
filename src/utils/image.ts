@@ -203,13 +203,7 @@ async function prepareTiff(
   }
 
   const data =
-    new Uint8ClampedArray(
-      rgba.buffer.slice(
-        rgba.byteOffset,
-        rgba.byteOffset +
-          rgba.byteLength,
-      ),
-    );
+    new Uint8ClampedArray(rgba);
 
   const imageData =
     new ImageData(
@@ -242,6 +236,10 @@ async function prepareAvifFallback(
     await decode(
       await file.arrayBuffer(),
     );
+
+  if (!decoded) {
+    throw new Error("Impossible de décoder l'image AVIF.");
+  }
 
   const canvas =
     document.createElement("canvas");

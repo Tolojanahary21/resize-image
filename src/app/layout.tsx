@@ -6,6 +6,8 @@ import {
   Toaster,
 } from "sonner";
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,13 +27,15 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body>
-        {children}
+        <ThemeProvider>
+          {children}
 
-        <Toaster
-          position="top-right"
-          richColors
-          closeButton
-        />
+          <Toaster
+            position="top-right"
+            richColors
+            closeButton
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

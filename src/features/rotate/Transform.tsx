@@ -133,7 +133,7 @@ export default function TransformPanel() {
           }
           className={`flex items-center justify-center gap-2 rounded-lg border py-3 text-sm ${
             flipX
-              ? "border-black bg-black text-white"
+              ? "border-black bg-black text-white dark-surface"
               : "border-zinc-200"
           }`}
         >
@@ -151,7 +151,7 @@ export default function TransformPanel() {
           }
           className={`flex items-center justify-center gap-2 rounded-lg border py-3 text-sm ${
             flipY
-              ? "border-black bg-black text-white"
+              ? "border-black bg-black text-white dark-surface"
               : "border-zinc-200"
           }`}
         >

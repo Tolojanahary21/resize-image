@@ -1,21 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss";
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-}
-
-body {
-  background: #f4f4f5;
-  color: #18181b;
-}
-@import "tailwindcss";
 
 * {
   box-sizing: border-box;
@@ -67,40 +50,33 @@ input[type="range"] {
   background: #f4f4f5;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Theme overrides also cover the existing Tailwind utility classes. */
+.dark body,
+.dark .bg-zinc-100 { background-color: #18181b; }
+.dark body { color: #f4f4f5; }
+.dark .dark-surface { background-color: #27272a; border-color: #3f3f46; }
+.dark .bg-white { background-color: #27272a; }
+.dark .bg-zinc-50 { background-color: #3f3f46; }
+.dark .bg-black { background-color: #f4f4f5; }
+.dark .text-black { color: #18181b; }
+.dark .text-black,
+.dark .bg-black.text-white { color: #18181b; }
+.dark .text-zinc-800 { color: #e4e4e7; }
+.dark .text-zinc-600 { color: #d4d4d8; }
+.dark .text-zinc-500 { color: #a1a1aa; }
+.dark .text-zinc-400 { color: #71717a; }
+.dark .border-zinc-200 { border-color: #3f3f46; }
+.dark .border-zinc-300 { border-color: #52525b; }
+.dark .border-black { border-color: #f4f4f5; }
+.dark .bg-black.border-black { border-color: #f4f4f5; }
+.dark .hover\:bg-zinc-100:hover { background-color: #3f3f46; }
+.dark .hover\:bg-zinc-800:hover { background-color: #e4e4e7; }
+.dark .hover\:border-zinc-500:hover { border-color: #a1a1aa; }
+.dark input,
+.dark select { color: #f4f4f5; background-color: #27272a; }
+.dark input[type="range"] { accent-color: #f4f4f5; }
+.dark .editor-button { color: #d4d4d8; border-color: #3f3f46; background: #27272a; }
+.dark .editor-button:hover { background: #3f3f46; }
+.dark .bg-\[linear-gradient\(45deg\,\#e4e4e7_25\%\,transparent_25\%\)\,linear-gradient\(-45deg\,\#e4e4e7_25\%\,transparent_25\%\)\,linear-gradient\(45deg\,transparent_75\%\,\#e4e4e7_75\%\)\,linear-gradient\(-45deg\,transparent_75\%\,\#e4e4e7_75\%\)\] {
+  background-image: linear-gradient(45deg, #3f3f46 25%, transparent 25%), linear-gradient(-45deg, #3f3f46 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #3f3f46 75%), linear-gradient(-45deg, transparent 75%, #3f3f46 75%);
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */

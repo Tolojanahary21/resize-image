@@ -120,7 +120,7 @@ export default function PropertiesPanel() {
         />
       </div>
 
-      <div className="mt-6 rounded-xl bg-zinc-100 p-3">
+      <div className="mt-6 rounded-xl bg-zinc-100 p-3 dark-surface">
         <p className="text-xs leading-5 text-zinc-500">
           L’image reste sur cet appareil pendant le traitement.
         </p>

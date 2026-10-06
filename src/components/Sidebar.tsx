@@ -105,7 +105,7 @@ export default function Sidebar() {
                 }
                 className={`flex min-w-[76px] flex-col items-center justify-center gap-2 rounded-xl px-2 py-3 text-xs transition ${
                   active
-                    ? "bg-black text-white"
+                    ? "bg-black text-white dark-surface"
                     : "text-zinc-600 hover:bg-zinc-100"
                 } ${
                   disabled

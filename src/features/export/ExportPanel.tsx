@@ -146,7 +146,7 @@ export default function ExportPanel() {
                 className={`rounded-lg border px-3 py-2 text-sm ${
                   format ===
                   output.value
-                    ? "border-black bg-black text-white"
+                    ? "border-black bg-black text-white dark-surface"
                     : "border-zinc-200 hover:bg-zinc-100"
                 }`}
               >
@@ -199,7 +199,7 @@ export default function ExportPanel() {
         onClick={
           handleExport
         }
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-black px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 disabled:cursor-wait disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-black px-4 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 disabled:cursor-wait disabled:opacity-60 dark-surface"
       >
         {processing ? (
           <>
